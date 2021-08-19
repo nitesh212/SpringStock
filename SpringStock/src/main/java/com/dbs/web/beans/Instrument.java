@@ -13,6 +13,10 @@ public class Instrument {
 	private int face_value;
 	private LocalDate expiry_date;
 	private int min_quantity;
+	
+	public Instrument() {
+		System.out.println("Instrument Called!!!");
+	}
 	public Instrument(String instrument_id, String instrument_name, int face_value, LocalDate expiry_date,
 			int min_quantity) {
 		super();

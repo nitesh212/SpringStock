@@ -8,6 +8,10 @@ public class Custodian {
 	private String custodian_id;
 	private String name;
 	private String password;
+	
+	public Custodian() {
+		System.out.println("Custodian Called!!!");
+	}
 	public Custodian(String custodian_id, String name, String password) {
 		super();
 		this.custodian_id = custodian_id;

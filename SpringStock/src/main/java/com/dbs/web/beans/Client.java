@@ -16,6 +16,9 @@ public class Client {
 	@JoinColumn(name="custodian_id")
 	private Custodian custodian_id;
 
+	public Client() {
+		System.out.println("Client is Called!!!");
+	}
 	public Client(String client_id, String cilent_name, double maximum_transaction_limit, Custodian custodian_id) {
 		super();
 		this.client_id = client_id;

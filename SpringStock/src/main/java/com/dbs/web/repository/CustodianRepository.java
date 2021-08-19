@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.dbs.web.beans.Custodian;
 
-public interface CustodianInterface extends CrudRepository<Custodian, String>{
+public interface CustodianRepository extends CrudRepository<Custodian, String>{
 
 }
