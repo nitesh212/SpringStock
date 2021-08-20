@@ -20,15 +20,40 @@ public class Transaction {
 	private Client buyer;
 	private double price;
 	private int quantity;
+	@ManyToOne
+	@JoinColumn(name = "instrument_id")
+	private Instrument instrument;
 	
-	public Transaction(int transaction, Client seller, Client buyer, double price, int quantity) {
+	public Transaction() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+	public Transaction(int transaction, Client seller, Client buyer, double price, int quantity,
+			Instrument instrument) {
 		super();
 		this.transaction = transaction;
 		this.seller = seller;
 		this.buyer = buyer;
 		this.price = price;
 		this.quantity = quantity;
+		this.instrument = instrument;
 	}
+
+
+
+	public Instrument getInstrument() {
+		return instrument;
+	}
+
+
+
+	public void setInstrument(Instrument instrument) {
+		this.instrument = instrument;
+	}
+
+
 
 	public int getTransaction() {
 		return transaction;

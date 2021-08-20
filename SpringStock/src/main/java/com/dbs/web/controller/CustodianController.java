@@ -30,6 +30,28 @@ public class CustodianController {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponsePage(400, e.getMessage()));
 		}
 	}
+	
+	@GetMapping("/b/{custodian_id}")
+	public ResponseEntity<Object> findClientByClientI(@PathVariable String custodian_id){
+		try {
+			return ResponseEntity.ok(this.custodianservice.findCustodianByCustodianI(custodian_id));
+		}
+		catch(Exception e )
+		{
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponsePage(400, e.getMessage()));
+		}
+	}
+	
+	@GetMapping("/s/{custodian_id}")
+	public ResponseEntity<Object> findClientByClient(@PathVariable String custodian_id){
+		try {
+			return ResponseEntity.ok(this.custodianservice.findCustodianByCustodian(custodian_id));
+		}
+		catch(Exception e )
+		{
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponsePage(400, e.getMessage()));
+		}
+	}
 
 	
 }

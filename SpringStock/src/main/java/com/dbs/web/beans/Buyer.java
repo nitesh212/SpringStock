@@ -16,7 +16,7 @@ public class Buyer {
 	@ManyToOne
 	@JoinColumn(name="client_id")
 	private Client client;
-	private double price_input;
+	private double priceinput;
 	private int quantity;
 	@ManyToOne
 	@JoinColumn(name="instrument_id")
@@ -26,10 +26,10 @@ public class Buyer {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Buyer(Client client, double price_input, int quantity, Instrument instrument) {
+	public Buyer(Client client, double priceinput, int quantity, Instrument instrument) {
 		super();
 		this.client = client;
-		this.price_input = price_input;
+		this.priceinput = priceinput;
 		this.quantity = quantity;
 		this.instrument = instrument;
 	}
@@ -39,11 +39,11 @@ public class Buyer {
 	public void setClient(Client client) {
 		this.client = client;
 	}
-	public double getPrice_input() {
-		return price_input;
+	public double getPriceinput() {
+		return priceinput;
 	}
-	public void setPrice_input(double price_input) {
-		this.price_input = price_input;
+	public void setPriceinput(double price_input) {
+		this.priceinput = price_input;
 	}
 	public int getQuantity() {
 		return quantity;
@@ -59,7 +59,7 @@ public class Buyer {
 	}
 	@Override
 	public String toString() {
-		return "Buyer [client=" + client + ", price_input=" + price_input + ", quantity=" + quantity + ", instrument="
+		return "Buyer [client=" + client + ", priceinput=" + priceinput + ", quantity=" + quantity + ", instrument="
 				+ instrument + "]";
 	}
 	

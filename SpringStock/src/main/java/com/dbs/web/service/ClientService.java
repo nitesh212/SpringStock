@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dbs.web.beans.Client;
+import com.dbs.web.beans.Transaction;
 import com.dbs.web.repository.ClientRepository;
 @Service
 public class ClientService {
@@ -36,6 +37,23 @@ public class ClientService {
 		}
 		return client;
 
+	}
+	
+
+	public void addTransaction(Client client) throws Exception {
+		try {
+			this.clientrepo.save(client);
+			
+		}
+		catch(IllegalArgumentException e)
+		{
+			throw new IllegalArgumentException(e);
+		}
+		catch(Exception e)
+		{
+			throw new Exception(e);
+		}
+	
 	}
 	
 
