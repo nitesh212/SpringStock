@@ -1,5 +1,7 @@
 package com.dbs.web.service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +51,17 @@ public class CustodianService {
 			throw new Exception(e);
 		}
 		return custodian;
-
 	}
+	public String verifycustodian(Custodian custodian){
+		Optional<Custodian> custodian1 =this.custodianrepo.findCustodianByUsername(custodian.getUsername());
+        String pass = custodian1.get().getPassword();
+        String user = custodian1.get().getUsername();
+        if(custodian.getUsername().equals(user) && custodian.getPassword().equals(pass)){
+			return "Verified";
+		}
+		else {
+            return "Wrong Credentials";
+            }
 
+}
 }
